@@ -1,0 +1,19 @@
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+
+.raleway{
+    font-family: 'Raleway', sans-serif;
+}
+
+a:hover{
+    cursor: pointer;
+    stroke-width: 1.75;
+    transform: scale(1.03);
+    transform-origin: bottom;
+    transition: all 0.1s ease;
+}

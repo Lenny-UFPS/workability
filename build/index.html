@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Somos una agencia especializada en diseño y desarrollo web ubicada en la ciudad de Cúcuta">
+    <meta name="keywords" content="agencia, desarrollo, web, diseño, branding, marketing, web design, web development, seo, ui, ux">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google material icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- Vue.js CDN --> 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Tailwind css -->
+    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Raleway&display=swap" rel="stylesheet">
+    <title>Workability | Agencia de Diseño Web y Marketing Digital</title>
+</head>
+<body class="antialiased">
+    <div class="invisible" id="top"></div>
+    <!-- Container -->
+    <div class="container mx-auto py-12 px-4" id="navbar">
+        <!-- Navbar -->
+        <div class="flex justify-between">
+            <!-- Logo  -->
+                <a href="index.html" class="flex">
+                    <i data-feather="coffee"></i>
+                    <p class="text-lg raleway font-semibold ml-1">workability</p>
+                </a>
+            <!-- /. logo -->
+
+            <!-- Navbar items -->
+            <div class="flex items-end hidden sm:block">
+                <a href="#about" class="px-2 raleway font-semibold hover:text-blue-500 text-sm">Sobre nosotros</a>
+                <a href="#services" class="px-2 raleway font-semibold hover:text-blue-500 text-sm">Servicios</a>
+                <a href="#portfolio" class="px-2 raleway font-semibold hover:text-blue-500 text-sm">Portafolio</a>
+                <a href="#contact" class="px-2 raleway font-semibold hover:text-blue-500 text-sm">Contacto</a>
+            </div>
+            <!-- /. navbar items -->
+
+            <button v-on:click="active = !active" type="button" class="visible sm:hidden focus:outline-none">
+                <span v-show="!active" class="material-icons">menu</span>
+                <span v-show="active"class="material-icons">close</span>
+            </button>
+        </div>
+        <!-- /. navbar -->
+
+        <!-- Menu || mobile view -->
+        <div v-if="active">
+            <div class="inline-grid mt-4 w-full">
+                <a v-on:click="active = !active" href="#about" class="block px-4 py-3 raleway font-semibold hover:text-blue-500 text-sm hover:bg-gray-200 rounded">Sobre nosotros</a>
+                <a v-on:click="active = !active" href="#services" class="block px-4 py-3 raleway font-semibold hover:text-blue-500 text-sm hover:bg-gray-200">Servicios</a>
+                <a v-on:click="active = !active" href="#portfolio" class="block px-4 py-3 raleway font-semibold hover:text-blue-500 text-sm hover:bg-gray-200">Portafolio</a>
+                <a v-on:click="active = !active" href="#contact" class="block px-4 py-3 raleway font-semibold hover:text-blue-500 text-sm hover:bg-gray-200">Contacto</a>
+            </div>
+        </div>
+        <!-- /. menu -->
+
+        <!-- Card Header || mobile view -->
+        <div class="mx-auto mt-12 visible sm:hidden max-w-sm">
+            <div class="rounded-lg overflow-hidden shadow-lg border">
+                <img src="img/hacker.svg" alt="image" class="object-cover object-center">
+                <div class="p-6">
+                    <p class="montserrat text-xl font-semibold uppercase tracking-wide text-blue-900">¿Estás preparado digitalmente?</p>
+                    <p class="raleway font-semibold mt-6 text-sm">Workability es una agencia especializada en el diseño y desarrollo de sitios web, para que así puedas llegar a más personas con tu negocio</p>
+                    <div class="mt-8">
+                        <a href="#" class="montserrat font-extrabold uppercase py-3 px-4 text-xs tracking-wide rounded flex items-center w-32 justify-center border shadow-lg" style="background-color: #D0AEAE;">
+                            <p>ver más</p>
+                            <!-- <span class="material-icons ml-1">arrow_right_alt</span> -->
+                            <i data-feather="chevron-right" class="ml-2" style="width: 16px; height: 16px;"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- /. card header -->
+
+        <!-- Header -->
+        <div class="py-12 hidden sm:block">
+            <div class="flex justify-between items-center">
+                <div class="w-1/3 lg:w-1/3">
+                    <p class="montserrat text-3xl font-semibold uppercase text-blue-900 tracking-wide sm:text-xl lg:text-3xl">¿Estás preparado digitalmente?</p>
+                    <p class="raleway font-semibold mt-6 text-sm md:text-base lg:text-lg xl:text-xl">Workability es una agencia especializada en el diseño y desarrollo de sitios web, para que así puedas llegar a más personas con tu negocio</p>
+                    <div class="mt-8">
+                        <a href="#" class="montserrat font-extrabold uppercase py-3 px-4 text-xs tracking-wide rounded flex items-center w-32 justify-center border shadow-lg" style="background-color: #D0AEAE;">
+                            <p>ver más</p>
+                            <!-- <span class="material-icons ml-1">arrow_right_alt</span> -->
+                            <i data-feather="chevron-right" class="ml-2" style="width: 16px; height: 16px;"></i>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="w-1/2">
+                    <img src="img/hacker.svg" alt="image" class="object-center object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- /. header -->
+
+        <div class="pt-12">
+            <h1 class="text-2xl text-center font-semibold raleway tracking-wide">Workability - Desarrollo Web y Marketing Digital</h1>
+        </div>
+
+        <!-- Services -->
+        <div class="justify-between items-center hidden lg:flex"> <!-- > 1024 px  || lg - xl screens -->
+            <div class="w-2/5 mx-auto">
+                <img src="img/transaction.svg" alt="transaction">
+            </div>
+
+            <div class="w-1/2 inline-grid py-12 justify-center items-left">
+                <div class="flex justify-center items-center">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="flag" class="text-blue-900"></i>
+                    </div>
+
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Análisis de requerimientos</p>
+                        <p class="raleway font-semibold mt-4">Analizamos su negocio, mercado objetivo y las soluciones digitales posibles para realizar el proyecto a su medida en base al presupuesto acordado</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="monitor" class="text-blue-900"></i>
+                    </div>
+
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Desarrollo web</p>
+                        <p class="raleway font-semibold mt-4">El sitio web es la sucursal digital de su negocio, la primera impresión es lo más importante para un cliente potencial</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="tool" class="text-blue-900"></i>
+                    </div>
+
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Optimización Web</p>
+                        <p class="raleway font-semibold mt-4">Diseñamos y desarrollamos sitios web 100% administrables y escalables aprovechando tecnologías open source, así optimizamos recursos para mejorar su negocio</p>
+                    </div>
+                </div>
+            </div>
+        </div>  <!-- /. > 1024 px  || lg - xl screens -->
+
+        <div class="inline-grid py-12 justify-center items-left visible lg:hidden"> <!-- < 1024 px  || sm - md screens -->
+            <div class="flex justify-center items-center w-full sm:w-4/5">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="flag" class="text-blue-900"></i>
+                </div>
+
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Análisis de requerimientos</p>
+                    <p class="raleway font-semibold mt-4">Analizamos su negocio, mercado objetivo y las soluciones digitales posibles para realizar el proyecto a su medida en base al presupuesto acordado</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center w-full sm:w-4/5">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="monitor" class="text-blue-900"></i>
+                </div>
+
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Desarrollo web</p>
+                    <p class="raleway font-semibold mt-4">El sitio web es la sucursal digital de su negocio, la primera impresión es lo más importante para un cliente potencial</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center w-full sm:w-4/5">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="tool" class="text-blue-900"></i>
+                </div>
+
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Optimización Web</p>
+                    <p class="raleway font-semibold mt-4">Diseñamos y desarrollamos sitios web 100% administrables y escalables aprovechando tecnologías open source, así optimizamos recursos para mejorar su negocio</p>
+                </div>
+            </div>
+        </div> <!-- /. < 1024 px  || sm - md screens -->
+    <!-- /. services -->
+
+        <div class="pb-12">
+            <h1 class="text-center text-2xl font-semibold raleway">Workability</h1>
+            <p class="text-sm sm:text-base font-semibold raleway mt-2 text-center">Ayudamos a nuestros clientes a mejorar sus negocios aprovechando las nuevas tecnologías</p>
+        </div>
+
+        <div class="hidden xl:flex pt-3">  <!-- services card || xl screens -->
+            <div class="flex justify-center items-start w-1/4">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="check-circle" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Administración de contenidos</p>
+                    <p class="raleway font-semibold mt-4">Nos encargamos de mantener el sitio web y su contenido actualizado en todo momento</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start w-1/4">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="shopping-bag" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Catálogo de productos</p>
+                    <p class="raleway font-semibold mt-4">Promocione sus productos o servicios en línea y reciba solicitudes de pedidos</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start w-1/4">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="thumbs-up" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Marketing y Publicidad digital</p>
+                    <p class="raleway font-semibold mt-4">Promocionamos sus productos y servicios a través de redes sociales, motores de búsqueda y demás medios digitales</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start w-1/4">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="star" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Experiencias de usuario UX - UI</p>
+                    <p class="raleway font-semibold mt-4">Nuestros diseños generan una grata experiencia al usuario, conectándolos de una forma más amena con su negocio</p>
+                </div>
+            </div>
+        </div> <!-- /. services card -->
+
+        <div> <!-- services | sm,md,lg screens -->
+            <div class="hidden sm:flex xl:hidden pt-3">
+                <div class="flex justify-center items-start w-1/2">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="check-circle" class="text-blue-900"></i>
+                    </div>
+        
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Administración de contenidos</p>
+                        <p class="raleway font-semibold mt-4">Nos encargamos de mantener el sitio web y su contenido actualizado en todo momento</p>
+                    </div>
+                </div>
+    
+                <div class="flex justify-center items-start w-1/2">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="shopping-bag" class="text-blue-900"></i>
+                    </div>
+        
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Catálogo de productos</p>
+                        <p class="raleway font-semibold mt-4">Promocione sus productos o servicios en línea y reciba solicitudes de pedidos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden sm:flex xl:hidden">
+                <div class="flex justify-center items-start w-1/2">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="thumbs-up" class="text-blue-900"></i>
+                    </div>
+        
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Marketing y Publicidad digital</p>
+                        <p class="raleway font-semibold mt-4">Promocionamos sus productos y servicios a través de redes sociales, motores de búsqueda y demás medios digitales</p>
+                    </div>
+                </div>
+    
+                <div class="flex justify-center items-start w-1/2">
+                    <div class="p-5 rounded-full border shadow-lg">
+                        <i data-feather="star" class="text-blue-900"></i>
+                    </div>
+        
+                    <div class="w-full p-4">
+                        <p class="montserrat font-semibold text-xl">Experiencias de usuario UX - UI</p>
+                        <p class="raleway font-semibold mt-4">Nuestros diseños generan una grata experiencia al usuario, conectándolos de una forma más amena con su negocio</p>
+                    </div>
+                </div>
+            </div>
+        </div>  <!-- /. services || sm,md,lg screens -->
+
+        <div class="inline-grid sm:hidden pt-3">  <!-- default services -->
+            <div class="flex justify-center items-start w-full">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="check-circle" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Administración de contenidos</p>
+                    <p class="raleway font-semibold mt-4">Nos encargamos de mantener el sitio web y su contenido actualizado en todo momento</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start w-full">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="shopping-bag" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Catálogo de productos</p>
+                    <p class="raleway font-semibold mt-4">Promocione sus productos o servicios en línea y reciba solicitudes de pedidos</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start w-full">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="thumbs-up" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Marketing y Publicidad digital</p>
+                    <p class="raleway font-semibold mt-4">Promocionamos sus productos y servicios a través de redes sociales, motores de búsqueda y demás medios digitales</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-start w-full">
+                <div class="p-5 rounded-full border shadow-lg">
+                    <i data-feather="star" class="text-blue-900"></i>
+                </div>
+    
+                <div class="w-full p-4">
+                    <p class="montserrat font-semibold text-xl">Experiencias de usuario UX - UI</p>
+                    <p class="raleway font-semibold mt-4">Nuestros diseños generan una grata experiencia al usuario, conectándolos de una forma más amena con su negocio</p>
+                </div>
+            </div>
+        </div>  <!-- /. default services -->
+    </div>
+    <!-- /. container -->
+
+    <!-- portafolio || falta responsive -->
+    <div class="container mx-auto pb-12 px-4" id="portfolio">
+        <div class="flex items-center justify-between"> <!-- portfolio header -->
+            <div class="flex items-baseline p-4">
+                <h1 class="text-xl font-semibold raleway">Portafolio</h1> 
+                <a href="#" class="ml-4 flex items-end text-sm">
+                    <p class="raleway font-semibold text-gray-700">Ver todo</p>
+                    <i data-feather="chevron-right" class="ml-2 text-gray-700" style="width: 18px; height: 18px;"></i>
+                </a>
+            </div>
+
+            <div class="flex mt-2"> <!-- lg,xl chevron items -->
+                <button @click="minus_default()" type="button" class="text-gray-700 p-3 hover:bg-blue-600 hover:text-white focus:outline-none"><i data-feather="chevron-left" style="width: 18px; height: 18px;"></i></button>
+                <button @click="add_default" type="button" class="text-gray-700 p-3 ml-2 hover:bg-blue-600 hover:text-white focus:outline-none"><i data-feather="chevron-right" style="width: 18px; height: 18px;"></i></button>
+            </div>
+
+            <!-- md chevron items -->
+            <!-- <div class="hidden md:flex lg:hidden mt-2"> 
+                <button @click="minus_md()" type="button" class="text-gray-700 p-3 hover:bg-blue-600 hover:text-white focus:outline-none"><i data-feather="chevron-left" style="width: 18px; height: 18px;"></i></button>
+                <button @click="add_md()" type="button" class="text-gray-700 p-3 ml-2 hover:bg-blue-600 hover:text-white focus:outline-none"><i data-feather="chevron-right" style="width: 18px; height: 18px;"></i></button>
+            </div> -->
+
+            <!-- default,sm screens items -->
+            <!-- <div class="flex md:hidden mt-2"> 
+                <button @click="minus_default()" type="button" class="text-gray-700 p-3 hover:bg-blue-600 hover:text-white focus:outline-none"><i data-feather="chevron-left" style="width: 18px; height: 18px;"></i></button>
+                <button @click="add_default()" type="button" class="text-gray-700 p-3 ml-2 hover:bg-blue-600 hover:text-white focus:outline-none"><i data-feather="chevron-right" style="width: 18px; height: 18px;"></i></button>
+            </div> -->
+        </div> <!-- /. portfolio header -->
+
+        <!-- card portfolio || default,sm screens -- 1 item -->
+        <div class="flex pt-12 px-4">
+            <div class="max-w-xs sm:max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="object-cover object-center" :src="array[first].imageUrl" alt="Sapo">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">{{ array[first].title }}</div>
+                    <p class="text-gray-700 text-base">
+                    {{ array[first].description }}
+                    </p>
+                </div>
+
+                <div class="px-6 py-4 flex"> <!-- tags -->
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#ux-ui</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#web</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#development</span>
+                </div>
+            </div>  
+        </div>
+        <!-- /. card portfolio | default, sm screens -- 1 item -->
+    </div>
+    <!-- /. portafolio -->
+
+    <div class="container mx-auto pt-0 xl:pt-12 pb-12 xl:pb-24 px-4 justify-center">
+        <a href="#" class="flex p-5 bg-gray-300 items-end justify-center rounded shadow w-4/5 md:w-2/5 lg:w-1/3 mx-auto" style="background-color: #D0AEAE;">
+            <i data-feather="message-circle"></i>
+            <p class="ml-2 montserrat font-semibold uppercase text-sm">Solicite una cotización</p>
+        </a>
+    </div>
+
+    <!-- footer -->
+    <div id="footer" class="bg-black">
+        <div class="inline-grid md:flex bg-black items-start justify-center md:justify-between py-8 px-8 w-full">
+            <div class="flex p-4">
+                <i data-feather="smartphone" class="text-white opacity-50"></i>
+                <div class="inline-grid px-4 md:px-2">
+                    <p class="poppins font-semibold text-white tracking-wide text-base md:text-sm lg:text-base">+57 321 730 6279</p>
+                    <p class="mt-2 montserrat uppercase font-semibold text-white opacity-75 text-xs tracking-wide">lunes-viernes 8am-6pm</p>
+                </div>
+            </div>
+    
+            <div class="flex p-4">
+                <i data-feather="mail" class="text-white opacity-50"></i>
+                <p class="px-4 md:px-2 raleway font-semibold text-white tracking-wide text-base md:text-sm lg:text-base">email@example.com</p>
+            </div>
+    
+            <div class="flex p-4">
+                <i data-feather="map-pin" class="text-white opacity-50"></i>
+                <div class="inline-grid px-4 md:px-2">
+                    <p class="raleway font-semibold text-white tracking-wide text-base md:text-sm lg:text-base">Dirección</p>
+                    <p class="mt-2 montserrat uppercase font-semibold text-white opacity-75 text-xs tracking-wide">Cúcuta, Norte de Santander. Colombia</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="inline-grid sm:flex bg-black items-center justify-center sm:justify-between pb-8 px-8 w-full">
+            <div class="flex justify-around">
+                <a href="#" class="p-4 hover:bg-blue-700 opacity-75 hover:opacity-100"><i class="text-white" data-feather="facebook"></i></a>
+                <a href="#" class="p-4 hover:bg-blue-700 opacity-75 hover:opacity-100"><i class="text-white" data-feather="twitter"></i></a>
+                <a href="#" class="p-4 hover:bg-blue-700 opacity-75 hover:opacity-100"><i class="text-white" data-feather="instagram"></i></a>
+                <a href="#" class="p-4 hover:bg-blue-700 opacity-75 hover:opacity-100"><i class="text-white" data-feather="linkedin"></i></a>
+            </div>
+    
+            <a href="#top" class="hidden lg:block p-4 hover:bg-blue-700 opacity-75 hover:opacity-100 rounded-full border border-gray-900 shadow-lg">
+                <i data-feather="chevron-up" class="text-white"></i>
+            </a>
+            <p class="text-center text-white poppins font-semibold text-xs tracking-wide p-4 opacity-75">&copy<script>document.write(new Date().getFullYear());</script> Workability. Todos los derechos reservados.</p>
+        </div>
+    </div>
+    <!-- /. footer -->
+
+    <script>
+        new Vue({
+            el: '#navbar',
+            data: {
+                active: false
+            }
+        });
+
+        new Vue({
+            el: '#portfolio',
+            data: {
+                first: 0,
+                array: [
+                    {
+                        imageUrl: 'img/UI.png',
+                        title: 'UX - UI Prototype',
+                        description: 'Prototipo - 404 Page not found'
+                    }
+                ]
+            },
+            methods: {
+                add_default: function(){
+                    this.first++;
+                    if(this.first == this.array.length) this.first = 0;
+                },
+                minus_default: function(){
+                    this.first--;
+                    if(this.first < 0) this.first = this.array.length - 1;
+                }
+            }
+        });
+        feather.replace()
+    </script>
+</body>
+</html>
